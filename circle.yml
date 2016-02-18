@@ -9,14 +9,14 @@ machine:
   services:
     - docker
 
-  node:
-    version: 0.12.10
-
 dependencies:
 
   # make sure to keep the docker cache dir
   cache_directories:
     - "~/docker"
+
+  pre:
+    - nvm use 0.12.10 && nvm alias default 0.12.10
 
   override:
     - docker info
