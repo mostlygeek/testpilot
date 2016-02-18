@@ -9,6 +9,9 @@ machine:
   services:
     - docker
 
+  node:
+    version: 0.12.10
+
 dependencies:
 
   # make sure to keep the docker cache dir
@@ -16,6 +19,7 @@ dependencies:
     - "~/docker"
 
   pre:
+    # https://discuss.circleci.com/t/nvm-commands-are-not-evaluated/943
     - nvm use 0.12.10 && nvm alias default 0.12.10
 
   override:
